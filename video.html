@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>My video Gallery</title>
+</head>
+<body>
+    <h3 class="heading">Video Gallery</h3>
+    <div class="container">
+        <div class="main-video">
+            <div class="video">
+                <iframe src="https://drive.google.com/file/d/1epJcXLje3PmxESj3yj7yc1EKRwHCSSSq/preview" width="700px" height="500px" controls></iframe>
+                <h3 class="title">01. Video title goes here</h3>
+            </div>
+        </div>
+        <div class="video-list">
+            <div class="vid active">
+                <iframe src="https://drive.google.com/file/d/1epJcXLje3PmxESj3yj7yc1EKRwHCSSSq/preview"   controls></iframe>
+                <h3 class="title">01. Video title goes here</h3> 
+            </div>
+            <div class="vid">
+                <iframe src="https://drive.google.com/file/d/1t4d79pGgcnZ3V-OwuKTW11XOhzJGNx1V/preview"  allow="autoplay"></iframe>
+                <h3 class="title">02. Video title goes here</h3> 
+            </div>
+            <div class="vid">
+                <iframe src="https://drive.google.com/file/d/1ZHkoRmRCCLaW4i1_bn2j2nJn-JSxHU-8/preview"   allow="autoplay"></iframe>
+                <h3 class="title">03. Video title goes here</h3> 
+            </div>
+            <div class="vid">
+                <iframe src="https://drive.google.com/file/d/1NzCrUYnPJyJp99-e9szTqHVFV5uzzjo7/preview"   allow="autoplay"></iframe>
+                <h3 class="title">04. Video title goes here</h3> 
+            </div>
+            <div class="vid">
+                <iframe src="https://drive.google.com/file/d/1bCxqwo-Qyb_chVCK5Z9-HUA4IWWwwOdM/preview"   allow="autoplay"></iframe>
+                <h3 class="title">05. Video title goes here</h3> 
+            </div>
+            <div class="vid">
+                <iframe src="https://drive.google.com/file/d/13s75g21hy72wz_lpaj2HShKnJ8aYqK8-/preview"   allow="autoplay"></iframe>
+                <h3 class="title">06. Video title goes here</h3> 
+            </div>
+            <div class="vid">
+                <iframe src="https://drive.google.com/file/d/19vz7w1tgCuFIgZlHH3glSpBUKSTLpGO-/preview"   allow="autoplay"></iframe>
+                <h3 class="title">07. Video title goes here</h3> 
+            </div>
+            <div class="vid">
+                <iframe src="https://drive.google.com/file/d/1kzoGGGb803xDkwUYKZxiZoH5l9d6YIGs/preview"   allow="autoplay"></iframe>
+                <h3 class="title">08. Video title goes here</h3> 
+            </div>
+            <div class="vid">
+                <iframe src="https://drive.google.com/file/d/1dlPf6RHrK8cL_Y9le8auYvWA4WwSizeC/preview"   allow="autoplay"></iframe>
+                <h3 class="title">09. Video title goes here</h3> 
+            </div>
+            <div class="vid">
+                <iframe src="https://drive.google.com/file/d/1upzF6Rc464JVzqlJMUnbj4F9f0rZkRoB/preview"   allow="autoplay"></iframe>
+                <h3 class="title">10. Video title goes here</h3> 
+            </div>
+            <div class="vid">
+                <iframe src="https://drive.google.com/file/d/1qMU5u58F830FnX8Xp_rhRlkVYTdCfqML/preview"   allow="autoplay"></iframe>
+                <h3 class="title">11. Video title goes here</h3> 
+            </div>
+            <div class="vid">
+                <iframe src="https://drive.google.com/file/d/1FfMl_jccy9PcLpv0xHnhKFiSTQ4gI7Hq/preview"   allow="autoplay"></iframe>
+                <h3 class="title">12. Video title goes here</h3> 
+            </div>
+            <div class="vid">
+                <iframe src="https://drive.google.com/file/d/17BRYtD4Wn4E91LfJouvHsHMXBMC97cPy/preview"   allow="autoplay"></iframe>
+                <h3 class="title">13. Video title goes here</h3> 
+            </div>
+            <div class="vid">
+                <iframe src="https://drive.google.com/file/d/1RdfHljhOaXOO00misJGrWWyBvTPn3du4/preview"   allow="autoplay"></iframe>
+                <h3 class="title">14. Video title goes here</h3> 
+            </div>
+            <div class="vid">
+                <iframe src="https://drive.google.com/file/d/1I6NRQFR5GdkWWDRvmrWIBkVNiSQw3abE/preview"   allow="autoplay"></iframe>
+                <h3 class="title">15. Video title goes here</h3> 
+            </div>
+            <div class="vid">
+                <iframe src="https://drive.google.com/file/d/1w_3CIw_6kchs_fECMne3pm1Fq-htvzZ0/preview"   allow="autoplay"></iframe>
+                <h3 class="title">16. Video title goes here</h3> 
+            </div>
+            
+            
+        </div>
+    </div>
+    <script>
+        let listVideo = document.querySelectorAll('.video-list .vid');
+        let mainVideo = document.querySelector('.main-video video');
+        let title = document.querySelector('.main-video .title');
+    
+        listVideo.forEach(video => {
+            video.onclick = () => {
+                listVideo.forEach(vid => vid.classList.remove('active'));
+                video.classList.add('active');
+                if (video.classList.contains('active')) {
+                    let src = video.children[0].getAttribute('src');
+                    mainVideo.src = src;
+                    let text = video.children[1].innerHTML;
+                    title.innerHTML = text;
+                }
+            };
+        });
+    </script>
+    
+    
+</body>
+</html>
